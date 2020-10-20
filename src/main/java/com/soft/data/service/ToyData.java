@@ -46,18 +46,18 @@ public class ToyData {
     }
 
     public UnidadControl getRuc( ){
-        return new UnidadControl("1", "RUC", "1");
+        return new UnidadControl("numRuc", "RUC", "1");
     }
 
     public UnidadControl getCodTributo() {
-        return new UnidadControl("2", "codTriburo", "2");
+        return new UnidadControl("codTriburo", "codTriburo", "2");
     }
 
     public UnidadControl getPerDocumento() {
-        return new UnidadControl("3", "PerDocumento", "3");
+        return new UnidadControl("PerDocumento", "PerDocumento", "3");
     }
 
     public UnidadControl getEjercicio() {
-        return new UnidadControl("2", "ejercicio", "2");
+        return new UnidadControl("ejercicio", "ejercicio", "2");
     }
 }
