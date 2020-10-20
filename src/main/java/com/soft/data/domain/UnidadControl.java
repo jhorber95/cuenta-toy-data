@@ -11,6 +11,4 @@ public class UnidadControl {
     private String codigoAtributoUnidadControl;
     private String descripcionAtributoUnidadControl;
     private String numeroOrdenAtributoUnidadControl;
-
-
 }
