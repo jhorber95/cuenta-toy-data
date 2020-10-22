@@ -8,5 +8,5 @@ import java.util.List;
 
 @Data
 public class CuentasResponse {
-    private List<CuentaDto> cuentaDtos = new ArrayList<>();
+    private List<CuentaDto> cuentas = new ArrayList<>();
 }

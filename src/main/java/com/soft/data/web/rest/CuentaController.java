@@ -1,6 +1,7 @@
 package com.soft.data.web.rest;
 
 import com.soft.data.domain.CuentaDto;
+import com.soft.data.service.CuentasResponse;
 import com.soft.data.service.ToyDataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class CuentaController {
     }
 
     @GetMapping("/cuentas")
-    public ResponseEntity<List<CuentaDto>> getData() {
+    public ResponseEntity<CuentasResponse> getData() {
         return ResponseEntity.ok(toyDataService.generateData());
     }
 }

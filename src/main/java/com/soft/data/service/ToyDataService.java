@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class ToyDataService {
 
-    public List<CuentaDto> generateData() {
+    public CuentasResponse generateData() {
 
 
         CuentaDto c = new CuentaDto();
@@ -69,9 +69,9 @@ public class ToyDataService {
 
 
         CuentasResponse data = new CuentasResponse();
-        data.setCuentaDtos(cuentaDtos);
+        data.setCuentas(cuentaDtos);
 
-        return cuentaDtos;
+        return data;
     }
 
     private CatalogoDto createCatalogo(String cod) {
