@@ -22,7 +22,7 @@ public class ToyDataService {
                 .nomCuenta("Cuenta de Saldos Deudores TI")
                 .desCuenta("Cuenta de Saldos Deudores TI")
                 .codEstadoCuenta("1")
-                .codTipoCuenta(createCatalogo("CD10"))
+                .codTipoCuenta(cuentaDeuda("CD10"))
                 .unidadControl(createUnidad("1")).build();
 
         CuentaDto c1 = CuentaDto.builder()
@@ -30,7 +30,7 @@ public class ToyDataService {
                 .nomCuenta("Cuenta de Sanciones TI")
                 .desCuenta("Cuentade Sanciones TI")
                 .codEstadoCuenta("1")
-                .codTipoCuenta(createCatalogo("CD11"))
+                .codTipoCuenta(cuentaDeuda("CD11"))
                 .unidadControl(createUnidad("1")).build();
 
 
@@ -39,7 +39,7 @@ public class ToyDataService {
                 .nomCuenta("Cuenta de Valores TI (OP,RM,RD,RIP)")
                 .desCuenta("Cuenta de  Valores TI (OP,RM,RD,RIP)")
                 .codEstadoCuenta("1")
-                .codTipoCuenta(createCatalogo("CD12"))
+                .codTipoCuenta(cuentaDeuda("CD12"))
                 .unidadControl(createUnidad("1")).build();
 
 
@@ -48,7 +48,7 @@ public class ToyDataService {
                 .nomCuenta("Cuenta de Valores TA (OP, RM, RD, RSIDV, RIP)")
                 .desCuenta("Cuenta de  Valores TA (OP, RM, RD, RSIDV, RIP)")
                 .codEstadoCuenta("1")
-                .codTipoCuenta(createCatalogo("CD13"))
+                .codTipoCuenta(cuentaDeuda("CD13"))
                 .unidadControl(createUnidad("1")).build();
 
 
@@ -57,28 +57,49 @@ public class ToyDataService {
                 .nomCuenta("Cuenta de Fraccionamiento")
                 .desCuenta("Cuenta de  Fraccionamiento")
                 .codEstadoCuenta("1")
-                .codTipoCuenta(createCatalogo("CD14"))
+                .codTipoCuenta(cuentaDeuda("CD14"))
                 .unidadControl(createUnidad("1")).build();
 
+        CuentaDto c5 = CuentaDto.builder()
+                .codCuenta("CI3041")
+                .nomCuenta("Cuenta Contrapartida Deudas TI")
+                .desCuenta("Cuenta Contrapartida Deudas TI")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(cuentaInformativa())
+                .unidadControl(createUnidad("8"))
+                .build();
 
-        List<CuentaDto> cuentaDtos = new ArrayList<>();
-        cuentaDtos.add(c);
-        cuentaDtos.add(c1);
-        cuentaDtos.add(c2);
-        cuentaDtos.add(c3);
+        CuentaDto c6 = CuentaDto.builder()
+                .codCuenta("CC2011")
+                .nomCuenta("Cuenta de Saldos a Favor Declaraciones Mensuales")
+                .desCuenta("Cuenta de Saldos a Favor Declaraciones Mensuales")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(cuentaCredito())
+                .unidadControl(createUnidad("2"))
+                .build();
 
-        cuentaDtos.add(c4);
+        CuentaDto c7 = CuentaDto.builder()
+                .codCuenta("CI3045")
+                .nomCuenta("Cuenta Contrapartida de Saldos a Favor, Créditos, Pagos TI")
+                .desCuenta("Cuenta Contrapartida de Saldos a Favor, Créditos, Pagos TI")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(cuentaInformativa())
+                .unidadControl(createUnidad("6"))
+                .build();
 
+        CuentaDto c8 = CuentaDto.builder()
+                .codCuenta("CT4050")
+                .nomCuenta("Cuenta de Saldos de Sanciones Preliminares")
+                .desCuenta("Cuenta de Saldos de Sanciones Preliminares")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(cuentaTransitoria())
+                .unidadControl(createUnidad("1"))
+                .build();
 
-        CuentasResponse data = new CuentasResponse();
-        data.setCuentas(cuentaDtos);
-
-        return data;
+        return CuentasResponse.builder().cuentas(Arrays.asList(c, c1, c2, c3, c4, c5, c6, c7, c8)).build();
     }
 
-    private CatalogoDto createCatalogo(String cod) {
-        return new CatalogoDto(cod, cod);
-    }
+
 
     private UnidadControlDto createUnidad(String cod) {
         UnidadControlDto dto = new UnidadControlDto();
@@ -142,6 +163,22 @@ public class ToyDataService {
 
     private AtributoUnidadControlDto getEjercicio(String orden) {
         return new AtributoUnidadControlDto("ejercicio", "ejercicio", "", "str", orden);
+    }
+
+    private CatalogoDto cuentaCredito() {
+        return new CatalogoDto("CC20", "Cuentas de Créditos");
+    }
+
+    private CatalogoDto cuentaInformativa() {
+        return new CatalogoDto("CI30", "Cuentas Informativas o de Control");
+    }
+
+    private CatalogoDto cuentaTransitoria() {
+        return new CatalogoDto("CT40", "Cuentas Transitorias");
+    }
+
+    private CatalogoDto cuentaDeuda(String cod) {
+        return new CatalogoDto(cod, "Cuentas de Deudas");
     }
 
 }
