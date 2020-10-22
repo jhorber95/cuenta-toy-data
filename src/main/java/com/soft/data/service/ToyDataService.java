@@ -17,48 +17,48 @@ public class ToyDataService {
     public CuentasResponse generateData() {
 
 
-        CuentaDto c = new CuentaDto();
-        c.setCodCuenta("CD1011");
-        c.setNomCuenta("Cuenta de Saldos Deudores TI");
-        c.setDesCuenta("Cuenta de Saldos Deudores TI");
-        c.setCodEstadoCuenta("1");
-        c.setCodTipoCuenta(createCatalogo("CD10"));
-        c.setUnidadControl(createUnidad("1"));
+        CuentaDto c = CuentaDto.builder()
+                .codCuenta("CD1011")
+                .nomCuenta("Cuenta de Saldos Deudores TI")
+                .desCuenta("Cuenta de Saldos Deudores TI")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(createCatalogo("CD10"))
+                .unidadControl(createUnidad("1")).build();
 
-        CuentaDto c1 = new CuentaDto();
-        c1.setCodCuenta("CD1021");
-        c1.setNomCuenta("Cuenta de Sanciones TI");
-        c1.setDesCuenta("Cuentade Sanciones TI");
-        c1.setCodEstadoCuenta("1");
-        c1.setCodTipoCuenta(createCatalogo("CD11"));
-        c1.setUnidadControl(createUnidad("1"));
-
-
-        CuentaDto c2 = new CuentaDto();
-        c2.setCodCuenta("CD1031");
-        c2.setNomCuenta("Cuenta de Valores TI (OP,RM,RD,RIP)");
-        c2.setDesCuenta("Cuenta de  Valores TI (OP,RM,RD,RIP)");
-        c2.setCodEstadoCuenta("1");
-        c2.setCodTipoCuenta(createCatalogo("CD12"));
-        c2.setUnidadControl(createUnidad("1"));
+        CuentaDto c1 = CuentaDto.builder()
+                .codCuenta("CD1021")
+                .nomCuenta("Cuenta de Sanciones TI")
+                .desCuenta("Cuentade Sanciones TI")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(createCatalogo("CD11"))
+                .unidadControl(createUnidad("1")).build();
 
 
-        CuentaDto c3 = new CuentaDto();
-        c3.setCodCuenta("CD1032");
-        c3.setNomCuenta("Cuenta de Valores TA (OP, RM, RD, RSIDV, RIP)");
-        c3.setDesCuenta("Cuenta de  Valores TA (OP, RM, RD, RSIDV, RIP)");
-        c3.setCodEstadoCuenta("1");
-        c3.setCodTipoCuenta(createCatalogo("CD13"));
-        c3.setUnidadControl(createUnidad("1"));
+        CuentaDto c2 = CuentaDto.builder()
+                .codCuenta("CD1031")
+                .nomCuenta("Cuenta de Valores TI (OP,RM,RD,RIP)")
+                .desCuenta("Cuenta de  Valores TI (OP,RM,RD,RIP)")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(createCatalogo("CD12"))
+                .unidadControl(createUnidad("1")).build();
 
 
-        CuentaDto c4 = new CuentaDto();
-        c4.setCodCuenta("CD1041");
-        c4.setNomCuenta("Cuenta de Fraccionamiento");
-        c4.setDesCuenta("Cuenta de  Fraccionamiento");
-        c4.setCodEstadoCuenta("1");
-        c4.setCodTipoCuenta(createCatalogo("CD14"));
-        c4.setUnidadControl(createUnidad("1"));
+        CuentaDto c3 = CuentaDto.builder()
+                .codCuenta("CD1032")
+                .nomCuenta("Cuenta de Valores TA (OP, RM, RD, RSIDV, RIP)")
+                .desCuenta("Cuenta de  Valores TA (OP, RM, RD, RSIDV, RIP)")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(createCatalogo("CD13"))
+                .unidadControl(createUnidad("1")).build();
+
+
+        CuentaDto c4 = CuentaDto.builder()
+                .codCuenta("CD1041")
+                .nomCuenta("Cuenta de Fraccionamiento")
+                .desCuenta("Cuenta de  Fraccionamiento")
+                .codEstadoCuenta("1")
+                .codTipoCuenta(createCatalogo("CD14"))
+                .unidadControl(createUnidad("1")).build();
 
 
         List<CuentaDto> cuentaDtos = new ArrayList<>();
@@ -66,6 +66,8 @@ public class ToyDataService {
         cuentaDtos.add(c1);
         cuentaDtos.add(c2);
         cuentaDtos.add(c3);
+
+        cuentaDtos.add(c4);
 
 
         CuentasResponse data = new CuentasResponse();
