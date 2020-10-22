@@ -12,11 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AtributoUnidadControlDto {
-    private String codUnidadControl;
-    private String desUnidadControl;
-    private String codEstado;
-    private String desEstado;
-    private List<AtributoUnidadControlDto> lisAtributosUnidadControl;
-    private String indEstadoRegistro;
-    private String numLoadProcessEvent;
+    private String codAtributoUnidadControl;
+    private String desAtributoUnidadControl;
+    private String desValAtributoUnidadControl;
+    private String codTipoDatoAtributoUnidadControl;
+    private String numOrdenAtributoUnidadControl;
 }
