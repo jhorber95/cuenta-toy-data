@@ -1,15 +1,17 @@
 package com.soft.data.domain.enumeration;
 
 public enum CodigoAtributoSeccionSustento {
-    SUBTIPO_DOC("SUBTIPODOC"),
-    NUM_RUC("NUMRUC"),
-    TIP_DJ("TIPDJ"),
-    DOC_SUS("DOCSUS"),
-    FEC_VEN("FECVEN"),
-    COD_TRI("CODTRI"),
-    FEC_DOC("FECDOC"),
-    ORI_DJ("ORIDJ"),
-    COD_MON("CODMON");
+    SUBTIPO_DOC("subtipodoc"),
+    NUM_RUC("numruc"),
+    TIP_DJ("tipdj"),
+    DOC_SUS("docsus"),
+    FEC_VEN("fecven"),
+    COD_TRI("codtri"),
+    FEC_DOC("fecdoc"),
+    ORI_DJ("oridj"),
+    COD_MON("codmon"),
+    IND_DIF("inddif");
+
 
 
     public final String valor;

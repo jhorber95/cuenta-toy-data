@@ -1,14 +1,14 @@
 package com.soft.data.domain.enumeration;
 
 public enum CodigoAtributoInsumo {
-	RUC("NUMRUC"),
-	IMPORTE_TRIBUTO("MTOTRIBUTO"),
-	SUBTIPO_DOC("SUBTIPODOC"),
-	DOC_SUS("DOCSUS"),
-	PER_DOC("PERDOC"),
-	COD_TRI("ODTRI"),
-	FEC_DOC("FECDOC"),
-	IMP_TRI("IMPTRI");
+	RUC("numruc"),
+	IMPORTE_TRIBUTO("mtotributo"),
+	SUBTIPO_DOC("subtipodoc"),
+	DOC_SUS("docsus"),
+	PER_DOC("perdoc"),
+	COD_TRI("odtri"),
+	FEC_DOC("fecdoc"),
+	IMP_TRI("imptri");
 
 	public final String valor;
 
