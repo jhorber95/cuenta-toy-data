@@ -6,7 +6,6 @@ import com.soft.data.domain.enumeration.CodigoAtributoSeccionSustento;
 import com.soft.data.domain.enumeration.SeccionesDocumentoNormalizado;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +22,7 @@ public class DocumentoData {
                         .nombreTopico("topic-motorcuentaunica-generacion-documentonormalizado")
                         .build()
                 )
-                .documentosNormalizados(Arrays.asList(buildDocumentoNormalizadoDataDto()))
+                .documentosNormalizados(Collections.singletonList(buildDocumentoNormalizadoDataDto()))
                 .build();
     }
 
@@ -60,44 +59,44 @@ public class DocumentoData {
     public Map<String, AtributoNormalizadoDto> buildAtributos() {
         Map<String, AtributoNormalizadoDto> map = new HashMap<>();
 
-        map.put("subtipodoc", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.SUBTIPO_DOC.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.SUBTIPO_DOC.valor)
                 .descripcion("Documento sustento")
                 .valor("1")
                 .build());
 
-        map.put("numruc", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.RUC.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.RUC.valor)
                 .descripcion((CodigoAtributoInsumo.RUC.valor))
                 .valor("2")
                 .build());
 
-        map.put("docsus", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.DOC_SUS.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.DOC_SUS.valor)
                 .descripcion("Numero Documento sustento")
                 .valor("3")
                 .build());
 
 
-        map.put("perdoc", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.PER_DOC.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.PER_DOC.valor)
                 .descripcion("Periodo del documento")
                 .valor("4")
                 .build());
 
-        map.put("codtri", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.COD_TRI.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.COD_TRI.valor)
                 .descripcion("codigo tributo")
                 .valor("5")
                 .build());
 
-        map.put("fecdoc", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.FEC_DOC.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.FEC_DOC.valor)
                 .descripcion("Fecha de presentacion")
                 .valor("6")
                 .build());
 
-        map.put("imtri", AtributoNormalizadoDto.builder()
+        map.put(CodigoAtributoInsumo.IMP_TRI.valor, AtributoNormalizadoDto.builder()
                 .codigo(CodigoAtributoInsumo.IMP_TRI.valor)
                 .descripcion("Importe de tributo")
                 .valor("7")
@@ -129,13 +128,13 @@ public class DocumentoData {
         Map<String, SeccionNormalizadoDto> map = new HashMap<>();
 
         map.put(SeccionesDocumentoNormalizado.DOC_SUS.valor, SeccionNormalizadoDto.builder()
-                .codigo("DOCSUS")
+                .codigo(SeccionesDocumentoNormalizado.DOC_SUS.valor)
                 .descripcion("Documento Sustento")
                 .atributos(buildDOCSUSMapAtributoNormalizadoDto())
                 .build());
 
         map.put(SeccionesDocumentoNormalizado.OTR_DAT.valor, SeccionNormalizadoDto.builder()
-                .codigo("ORTDAT")
+                .codigo(SeccionesDocumentoNormalizado.OTR_DAT.valor)
                 .descripcion("Otros datos especificos")
                 .atributos(buildOTRDATMapAtributoNormalizadoDto())
                 .build());
@@ -159,43 +158,43 @@ public class DocumentoData {
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.TIP_DJ.valor, AtributoNormalizadoDto.builder()
-                .codigo("TIPDJ")
+                .codigo(CodigoAtributoSeccionSustento.TIP_DJ.valor)
                 .descripcion("Tipo de documento")
                 .valor("3")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.DOC_SUS.valor, AtributoNormalizadoDto.builder()
-                .codigo("DOCSUS")
+                .codigo(CodigoAtributoSeccionSustento.DOC_SUS.valor)
                 .descripcion("Document description")
                 .valor("4")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.FEC_VEN.valor, AtributoNormalizadoDto.builder()
-                .codigo("FECVEN")
+                .codigo(CodigoAtributoSeccionSustento.FEC_VEN.valor)
                 .descripcion("Fecha de vencimiento")
                 .valor("5")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.COD_TRI.valor, AtributoNormalizadoDto.builder()
-                .codigo("CODTRI")
+                .codigo(CodigoAtributoSeccionSustento.COD_TRI.valor)
                 .descripcion("codigo trimestre")
                 .valor("6")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.FEC_DOC.valor, AtributoNormalizadoDto.builder()
-                .codigo("FECDOC")
+                .codigo(CodigoAtributoSeccionSustento.FEC_DOC.valor)
                 .descripcion("Fecha documento")
                 .valor("7")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.ORI_DJ.valor, AtributoNormalizadoDto.builder()
-                .codigo("ORIDJ")
+                .codigo(CodigoAtributoSeccionSustento.ORI_DJ.valor)
                 .descripcion("origen documento")
                 .valor("8")
                 .build());
 
         map.put(CodigoAtributoSeccionSustento.COD_MON.valor, AtributoNormalizadoDto.builder()
-                .codigo("CODMON")
+                .codigo(CodigoAtributoSeccionSustento.COD_MON.valor)
                 .descripcion("Codugo mes")
                 .valor("9")
                 .build());
