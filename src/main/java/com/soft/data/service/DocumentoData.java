@@ -103,18 +103,6 @@ public class DocumentoData {
                 .valor("7")
                 .build());
 
-        map.put("perdoc", AtributoNormalizadoDto.builder()
-                .codigo(CodigoAtributoInsumo.PER_DOC.valor)
-                .descripcion("Periodo del documento")
-                .valor("8")
-                .build());
-
-        map.put("perdoc", AtributoNormalizadoDto.builder()
-                .codigo(CodigoAtributoInsumo.PER_DOC.valor)
-                .descripcion("Periodo del documento")
-                .valor("9")
-                .build());
-
         return map;
     }
 
