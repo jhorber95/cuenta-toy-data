@@ -1,5 +1,6 @@
 package com.soft.data.web.rest;
 
+import com.soft.data.domain.CuentaDto;
 import com.soft.data.domain.DocumentoNormalizadoEvent;
 import com.soft.data.service.CuentasResponse;
 import com.soft.data.service.DocumentoData;
@@ -8,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -22,7 +25,7 @@ public class CuentaController {
     }
 
     @GetMapping("/cuentas")
-    public ResponseEntity<CuentasResponse> getData() {
+    public ResponseEntity<List<CuentaDto>> getData() {
         return ResponseEntity.ok(toyDataService.generateData());
     }
 

@@ -8,11 +8,12 @@ import com.soft.data.util.Constants;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ToyDataService {
 
-    public CuentasResponse generateData() {
+    public List<CuentaDto> generateData() {
 
 
         CuentaDto c = CuentaDto.builder()
@@ -94,7 +95,8 @@ public class ToyDataService {
                 .unidadControl(createUnidad("1"))
                 .build();
 
-        return CuentasResponse.builder().cuentas(Arrays.asList(c, c1, c2, c3, c4, c5, c6, c7, c8)).build();
+       // return CuentasResponse.builder().cuentas(Arrays.asList(c, c1, c2, c3, c4, c5, c6, c7, c8)).build();
+        return Arrays.asList(c, c1, c2, c3, c4, c5, c6, c7, c8);
     }
 
 
